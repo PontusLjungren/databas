@@ -1,6 +1,6 @@
 import mysql.connector
 
-group_number="" #FILL IN YOUR GROUP NUMBER
+group_number="14" #FILL IN YOUR GROUP NUMBER
 
 mydb = mysql.connector.connect(
   host="groucho.it.uu.se",
