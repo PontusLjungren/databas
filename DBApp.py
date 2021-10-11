@@ -4,7 +4,7 @@ import queries
 
 mydb = None
 
-def get_cursor():
+def get_connection():
   group_number="14" #FILL IN YOUR GROUP NUMBER
   mydb = mysql.connector.connect(
     host="127.0.0.1",
@@ -12,8 +12,7 @@ def get_cursor():
     passwd="pwd_"+group_number,
     database="ht21_1_hotels_group_"+group_number
   )
-
-  return mydb.cursor()
+  return mydb
 
 def close_connection():
   mydb.close()

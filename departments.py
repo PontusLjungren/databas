@@ -1,9 +1,8 @@
 import DBApp
 import queries
 
-mycursor = DBApp.get_cursor()
-
-
+mydb = DBApp.get_connection()
+mycursor = mydb.cursor()
 mycursor.execute("USE ht21_1_project_group_14")
 mycursor.execute("SELECT department_number FROM DEPARTMENT")
 database_departments = []
