@@ -2,6 +2,8 @@ import mysql.connector
 
 import queries
 
+mydb = None
+
 def get_cursor():
   group_number="14" #FILL IN YOUR GROUP NUMBER
   mydb = mysql.connector.connect(
@@ -11,10 +13,7 @@ def get_cursor():
     database="ht21_1_hotels_group_"+group_number
   )
 
-  mycursor = mydb.cursor()
+  return mydb.cursor()
 
-
-
-
-
-mydb.close()
+def close_connection():
+  mydb.close()
