@@ -18,13 +18,17 @@ database_departments = []
 for x in mycursor:
   database_departments.append(x[0])
 
+def print_product(title, ID, price):
+  print("Title: " + title + "    ID: " + str(ID) + "    Price: " + str(price))
 
 # get all department_number in a list.
 # check that input is valid
 while True:
   department_id = input("What department do you wish to see?\n")
   if int(department_id) in database_departments:
-    print(queries.is_leaf_department(mycursor, department_id))
+    products = queries.is_leaf_department(mycursor, department_id)
+    for product in products:
+        print_product(product[0], product[1], product[2])
 
 
 
