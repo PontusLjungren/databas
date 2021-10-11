@@ -12,7 +12,7 @@ def is_leaf_department(cursor, department_number):
 
 def get_discount(cursor, product_number):
     cursor.execute(f"Select Discount_percentage FROM PRODUCT WHERE Product_number={product_number}")
-    return cursor.fetchone()
+    return cursor.fetchone()[0]
 
 def set_discount(cursor, product_number, new_discount):
     cursor.execute(f"UPDATE PRODUCT SET Discount_percentage={new_discount} WHERE Product_number={product_number}")
