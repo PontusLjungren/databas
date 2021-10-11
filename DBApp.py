@@ -1,6 +1,7 @@
 import mysql.connector
 
 
+
 group_number="14" #FILL IN YOUR GROUP NUMBER
 mydb = mysql.connector.connect(
   host="127.0.0.1",
