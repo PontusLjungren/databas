@@ -1,6 +1,6 @@
 import mysql.connector
 
-
+import queries
 
 group_number="14" #FILL IN YOUR GROUP NUMBER
 mydb = mysql.connector.connect(
@@ -24,7 +24,7 @@ for x in mycursor:
 while True:
   department_id = input("What department do you wish to see?\n")
   if int(department_id) in database_departments:
-    print("test")
+    print(queries.is_leaf_department(mycursor, department_id))
 
 
 
